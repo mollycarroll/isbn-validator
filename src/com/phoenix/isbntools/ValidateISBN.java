@@ -24,7 +24,10 @@ public class ValidateISBN {
                     throw new NumberFormatException("ISBN numbers must contain numbers only");
                 }
             }
-            total += isbn.charAt(i) * (10 - i);
+            else {
+                total += Character.getNumericValue(isbn.charAt(i)) * (10 - i);
+            }
+
         }
 
         if (total % 11 == 0) {
